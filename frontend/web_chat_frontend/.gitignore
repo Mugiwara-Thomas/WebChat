@@ -2,7 +2,6 @@
 
 # dependencies
 /node_modules
-/peer_chat/node_modules
 /.pnp
 .pnp.js
 
