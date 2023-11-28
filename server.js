@@ -5,13 +5,14 @@ const server = http.createServer(app)
 
 const io = require("socket.io")(server, {
 	cors: {
-		origin: "https://webchat-client.onrender.com", // TODO: env
+		origin: "https://webchat-client.onrender.com",
 		methods: [ "GET", "POST" ]
 	}
 })
 
 io.on("connection", (socket) => {
-	socket.emit("me", socket.id)
+	const randomId = Math.floor(Math.random() * 1000000)
+	socket.emit("me", randomId)
 
 	socket.on("disconnect", () => {
 		socket.broadcast.emit("callEnded")

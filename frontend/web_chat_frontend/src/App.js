@@ -36,7 +36,7 @@ function App() {
         if (myVideo.current) {
           myVideo.current.srcObject = stream
         }
-      }, 5000)
+      }, 3000)
     })
 
     // ? Perguntando para o server o meu id e setando ele
