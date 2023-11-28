@@ -5,7 +5,7 @@ const server = http.createServer(app)
 
 const io = require("socket.io")(server, {
 	cors: {
-		origin: "http://localhost:3000",
+		origin: "https://webchat-client.onrender.com", // TODO: env
 		methods: [ "GET", "POST" ]
 	}
 })

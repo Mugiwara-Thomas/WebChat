@@ -11,8 +11,8 @@ import io from 'socket.io-client';
 
 import './App.css';
 
-
-const socket = io.connect('http://localhost:5000')
+// TODO: env
+const socket = io.connect('https://webchat-server-0dde.onrender.com')
 function App() {
   const [meuId, setMeuID] = useState("")
   const [stream, setStream] = useState()
@@ -32,7 +32,11 @@ function App() {
     // ? Pedir Permissão para usar o vídeo e áudio do navegador
     navigator.mediaDevices.getUserMedia({ video: true, audio: true }).then((stream) => {
       setStream(stream)
-      myVideo.current.srcObject = stream
+      setTimeout(() => {
+        if (myVideo.current) {
+          myVideo.current.srcObject = stream
+        }
+      }, 5000)
     })
 
     // ? Perguntando para o server o meu id e setando ele
