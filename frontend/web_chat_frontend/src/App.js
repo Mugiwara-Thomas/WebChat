@@ -33,10 +33,8 @@ function App() {
     navigator.mediaDevices.getUserMedia({ video: true, audio: true }).then((stream) => {
       setStream(stream)
       setTimeout(() => {
-        if (myVideo.current) {
-          myVideo.current.srcObject = stream
-        }
-      }, 3000)
+        myVideo.current.srcObject = stream
+      }, 2000)
     })
 
     // ? Perguntando para o server o meu id e setando ele

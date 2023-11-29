@@ -11,8 +11,7 @@ const io = require("socket.io")(server, {
 })
 
 io.on("connection", (socket) => {
-	const randomId = Math.floor(Math.random() * 1000000)
-	socket.emit("me", randomId)
+	socket.emit("me", socket.id)
 
 	socket.on("disconnect", () => {
 		socket.broadcast.emit("callEnded")
