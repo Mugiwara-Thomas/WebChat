@@ -9,7 +9,7 @@ import { CopyToClipboard } from "react-copy-to-clipboard";
 import Peer from "simple-peer";
 import io from "socket.io-client";
 
-import './App.css';
+import "./App.css";
 
 const socket = io.connect("http://localhost:5000");
 function App() {
@@ -109,10 +109,6 @@ function App() {
   const sairDaChamada = () => {
     setCallEnded(true);
     connectionRef.current.destroy();
-
-    setTimeout(() => {
-      window.location.reload();
-    }, 1000);
   };
 
   return (
