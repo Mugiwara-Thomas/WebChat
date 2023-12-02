@@ -33,7 +33,11 @@ function App() {
       .getUserMedia({ video: true, audio: true })
       .then((stream) => {
         setStream(stream);
-        myVideo.current.srcObject = stream;
+        setTimeout(() => {
+          if (myVideo.current) {
+            myVideo.current.srcObject = stream;
+          }
+        }, 3000);
       });
 
     // ? Perguntando para o server o meu id e setando ele
