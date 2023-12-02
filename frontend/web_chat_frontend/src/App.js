@@ -111,6 +111,10 @@ function App() {
   const sairDaChamada = () => {
     setCallEnded(true)
     connectionRef.current.destroy()
+
+    setTimeout(() => {
+      window.location.reload();
+    }, 1000);
   }
 
   return (
