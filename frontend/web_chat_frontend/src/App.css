@@ -27,6 +27,7 @@
 
 .video-container {
 	display: grid;
+	width: 45%;
 	grid-template-columns: 1fr 1fr;
 	justify-content: center;
 	align-content: center;
